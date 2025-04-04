@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Library</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id="header">Atheris Library</div>
+    <div id="main">
+        <div id="utilitybar">
+            <!-- Buttons to toggle visibility -->
+            <button class="togglebtn" onclick="toggleAddBook()">Add to Library</button>
+           
+            <!-- Add Book Section (hidden by default) -->
+            <div id="addbook" class="hidden">
+                <input type="text" id="booktitle" placeholder="Enter book title" required>
+                <input type="text" id="author" placeholder="Enter author name" required>
+                <input type="number" id="pages" placeholder="Enter number of pages" required>
+                <div style="display: flex; justify-content: center; gap: 20px;">    <label>
+                    <input type="radio" name="readStatus" id="read" value="true"> Read
+                </label>
+                <label>
+                    <input type="radio" name="readStatus" id="unread" value="false" checked> Unread
+                </label></div>
+                <button onclick="addBookToLibrary()">Add Book</button>
+            </div> 
+
+            <button class="togglebtn" onclick="toggleSearch()">Search Library</button>
+
+            <!-- Search Section (hidden by default) -->
+            <div id="search" class="hidden">
+                <input type="text" id="search-input" placeholder="Search books by title or author" oninput="searchBooks()">
+                <button onclick="clearSearch()">Clear</button>
+            </div>
+        </div>
+        <div id="contentbox">
+            <h2>Books:</h2>
+            <div id="library"></div>
+        </div>
+    </div>
 </body>
 </html>

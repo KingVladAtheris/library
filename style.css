@@ -6,3 +6,133 @@
     padding: 0;
     margin: 0;
 }
+
+#header{
+    display: flex;
+    width: 100vw;
+    justify-content: left;
+    background-color: black;
+    color: white;
+    font-size: 2em;
+    padding-left: 30%;
+}
+
+#main{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    width: 100vw;
+}
+
+#utilitybar{
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+    margin-left: 30px;
+}
+
+#contentbox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#addbook, #search {
+    display: none; 
+    flex-direction: column;
+}
+
+
+.togglebtn {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+    font-weight: 900;
+}
+
+.togglebtn.active {
+    background-color: #388E3C;  
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2),  
+                1px 1px 3px rgba(0, 0, 0, 0.2);  
+    transform: translateY(2px);  
+    color: white;
+    font-weight: 900;
+}
+
+
+#addbook, #search {
+    display: none; 
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 2px;
+}
+
+
+#addbook:not(.hidden), #search:not(.hidden) {
+    display: flex;
+}
+
+#library{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat();
+    gap: 15px;
+}
+
+.book {
+    background-color: #f4f4f4;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;  
+    height: 200px; 
+}
+
+.book:hover {
+    transform: scale(1.05);
+}
+
+.book h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin: 0;  
+    padding-bottom: 10px; 
+    flex-grow: 1; 
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+
+.book p {
+    font-size: 1.1em;
+    color: #666;
+    margin: 5px 0; 
+}
+
+
+.book button {
+    background-color: #d13131;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; 
+    margin: 5px;
+}
+
+
+.book button:hover {
+    background-color: #850d00;
+}
